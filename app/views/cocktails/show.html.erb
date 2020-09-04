@@ -1,0 +1,22 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4"><%= @cocktail.name %> </h1>
+    <img src="https://source.unsplash.com/featured/?{'<%= @cocktail.name %> cocktail'},{cocktail}" alt="" width=700px height=500px background-size=cover>
+    <ul class="list-group">
+  <% @cocktail.doses.each do |dose| %>
+    <li class="list-group-item">
+      <%= dose.description %>
+      <%= link_to "Remove",
+                  cocktail_dose_path(@cocktail, dose),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+    </li>
+  <% end %>
+  
+</ul>
+    
+    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    <%=link_to "change dose", new_cocktail_dose_path(@cocktail, @dose)%> <br> <br>
+    <%=link_to "BACK", cocktails_path%>
+  </div>
+</div>

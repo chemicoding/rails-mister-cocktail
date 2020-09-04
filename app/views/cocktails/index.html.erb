@@ -1,0 +1,27 @@
+<div class="container my-5">
+  <div class="row">
+    <div class="col text-center">
+      <h1>All cocktails</h1>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col">
+        <div class="card mt-4" style="width: 18rem;">
+          <div class="card-body">
+          <img src="https://source.unsplash.com/featured/?{'<%= cocktail.name %>'},{cocktail}" alt="" width=240px>
+            <h5 class="card-title"><%= cocktail.name %></h5>
+            <h6 class="card-subtitle mb-2 text-muted">Cocktail subtitle</h6>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+            <a href="" class="card-link"><%=link_to 'Show More', cocktail_path(cocktail) %></a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>  
