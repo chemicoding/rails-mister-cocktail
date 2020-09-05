@@ -11,17 +11,22 @@
       <div class="col">
         <div class="card mt-4" style="width: 18rem;">
           <div class="card-body">
-          <img src="https://source.unsplash.com/featured/?{'<%= cocktail.name %>'},{cocktail}" alt="" width=240px>
+
+          <%if cocktail.photo.attached?%> 
+          <%=cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill%>
+           <% end %>
             <h5 class="card-title"><%= cocktail.name %></h5>
-            <h6 class="card-subtitle mb-2 text-muted">Cocktail subtitle</h6>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            <h6 class="card-subtitle mb-2 text-muted">Good Shit</h6>
+            <p class="card-text">This is the best shit you're gonna drink in your life,
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
             <a href="" class="card-link"><%=link_to 'Show More', cocktail_path(cocktail) %></a>
-            <a href="#" class="card-link">Another link</a>
           </div>
         </div>
+        
       </div>
     <% end %>
   </div>
+  
 </div>  
+
